@@ -4,12 +4,12 @@ build-backend = "hatchling.build"
 
 [project]
 name = "juv"
-version = "0.4.4"
+version = "0.5.0"
 description = "A toolkit for reproducible Jupyter notebooks, powered by uv."
 readme = "README.md"
 authors = [{ name = "Trevor Manz", email = "trevor.j.manz@gmail.com" }]
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = "MIT"
 dependencies = [
     "click>=8.1.7",
     "jupytext>=1.16.4",
@@ -37,7 +37,12 @@ classifiers = [
 juv = "juv:main"
 
 [dependency-groups]
-dev = ["inline-snapshot>=0.13.3", "pytest>=8.3.3", "ruff>=0.7.0"]
+dev = [
+    "inline-snapshot>=0.13.3",
+    "pytest>=8.3.3",
+    "rooster>=0.1.1",
+    "ruff>=0.7.0",
+]
 e2e = ["pytest-playwright>=0.5.2"]
 
 [tool.ruff]
@@ -68,7 +73,7 @@ ignore = [
 ]
 
 [tool.rooster]
-version_tag_prefix = "v"
+version_tag_prefix = ""
 major_labels = []
 minor_labels = ["breaking"]
 changelog_ignore_labels = ["internal"]

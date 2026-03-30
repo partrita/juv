@@ -38,4 +38,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           VERSION=$(uv run --quiet juv version --output-format=json | jq -r '.version')
-          gh release create v$VERSION
+          gh release create $VERSION

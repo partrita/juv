@@ -1,3 +1,23 @@
+## 0.5.0
+
+Released on 2026-03-30.
+
+### Breaking changes
+
+- Remove uv upper bound pin, update to uv >=0.11.0 ([#101](https://github.com/manzt/juv/pull/101))
+
+### Enhancements
+
+- Use shared `rich.Console` instances ([#102](https://github.com/manzt/juv/pull/102))
+
+### Other changes
+
+- Improve managed mode UI with spinner and clean output ([#104](https://github.com/manzt/juv/pull/104))
+
+### Contributors
+
+- [@manzt](https://github.com/manzt)
+
 ## 0.4.3
 
 ### Bug fixes

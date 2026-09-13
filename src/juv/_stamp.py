@@ -37,7 +37,7 @@ class UpdateAction:
     value: str
 
 
-Action = typing.Union[DeleteAction, CreateAction, UpdateAction]
+Action = DeleteAction | CreateAction | UpdateAction
 
 
 def parse_timestamp(date_str: str) -> OffsetDateTime:

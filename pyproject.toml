@@ -8,14 +8,17 @@ version = "0.5.0"
 description = "A toolkit for reproducible Jupyter notebooks, powered by uv."
 readme = "README.md"
 authors = [{ name = "Trevor Manz", email = "trevor.j.manz@gmail.com" }]
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = "MIT"
 dependencies = [
     "click>=8.1.7",
     "jupytext>=1.16.4",
+    "msgpack>=1.2.1",
+    "Pygments>=2.20.0",
+    "requests>=2.33.0",
     "rich>=13.9.2",
     "tomlkit>=0.13.2",
-    "whenever>=0.9.1; python_version >= '3.9'",
+    "whenever>=0.9.1",
     "uv>=0.11.0",
 ]
 classifiers = [
@@ -23,9 +26,6 @@ classifiers = [
     "Intended Audience :: Developers",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -39,7 +39,7 @@ juv = "juv:main"
 [dependency-groups]
 dev = [
     "inline-snapshot>=0.13.3",
-    "pytest>=8.3.3",
+    "pytest>=9.0.3",
     "rooster>=0.1.1",
     "ruff>=0.7.0",
 ]
@@ -47,15 +47,15 @@ e2e = ["pytest-playwright>=0.5.2"]
 
 [tool.ruff]
 line-length = 88
-target-version = "py38"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-    "TD",     # TODOS
-    "FIX",    # Fixable issue
-    "S404",   # Allow imports of subprocess
-    "D203",   # Conflict with formatter
+    "TD",
+    "FIX",
+    "S404",
+    "D203",
     "COM812",
     "ISC001",
     "D213",
@@ -63,13 +63,13 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*.py" = [
-    "D",       # No docstrings in tests
-    "S101",    # Use of assert
-    "SLF001",  # Access private member
-    "W291",    # Trailing whitespace
-    "INP001",  # Allow implicit namespace
-    "E501",    # Allow long lines (snapshots)
-    "PLC2701", # Import private member
+    "D",
+    "S101",
+    "SLF001",
+    "W291",
+    "INP001",
+    "E501",
+    "PLC2701",
 ]
 
 [tool.rooster]
